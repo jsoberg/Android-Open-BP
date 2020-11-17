@@ -21,7 +21,7 @@ android {
     buildToolsVersion "30.0.0"
 
     defaultConfig {
-        applicationId "com.soberg.currentlyreading"
+        applicationId "com.soberg.openbp"
         minSdkVersion 22
         targetSdkVersion 30
         versionCode 1
