@@ -1,29 +1,45 @@
+import com.soberg.openbp.buildsrc.Deps
+
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.3.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    implementation Deps.Kotlin.stdlib
 
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation Deps.material
+    implementation Deps.AndroidX.Activity.activityCompose
+    implementation Deps.AndroidX.coreKtx
+    implementation Deps.AndroidX.appcompat
+    implementation Deps.AndroidX.Lifecycle.livedata
+    implementation Deps.AndroidX.Lifecycle.viewModelCompose
+    implementation Deps.AndroidX.Navigation.fragment
+    implementation Deps.AndroidX.Navigation.uiKtx
+
+    implementation Deps.AndroidX.Compose.layout
+    implementation Deps.AndroidX.Compose.material
+    implementation Deps.AndroidX.Compose.materialIconsExtended
+    implementation Deps.AndroidX.Compose.tooling
+    implementation Deps.AndroidX.Compose.uiUtil
+    implementation Deps.AndroidX.Compose.runtime
+    implementation Deps.AndroidX.Compose.runtimeLivedata
+    implementation Deps.AndroidX.Compose.viewBinding
+
+    androidTestImplementation Deps.junit
+    androidTestImplementation Deps.AndroidX.Test.core
+    androidTestImplementation Deps.AndroidX.Test.espressoCore
+    androidTestImplementation Deps.AndroidX.Test.rules
+    androidTestImplementation Deps.AndroidX.Test.Ext.junit
+    androidTestImplementation Deps.AndroidX.Compose.uiTest
 }
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.soberg.openbp"
-        minSdkVersion 22
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -40,10 +56,28 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    buildFeatures {
+        compose true
+        viewBinding true
+
+        // Disable unused AGP features
+        buildConfig false
+        aidl false
+        renderScript false
+        resValues false
+        shaders false
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion Deps.AndroidX.Compose.version
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
