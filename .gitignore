@@ -37,6 +37,7 @@ captures/
 # IntelliJ
 *.iml
 /.idea/caches
+/.idea/deploymentTargetDropDown.xml
 .idea/workspace.xml
 .idea/tasks.xml
 .idea/gradle.xml
