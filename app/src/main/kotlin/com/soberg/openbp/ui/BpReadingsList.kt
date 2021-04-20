@@ -8,12 +8,14 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import com.soberg.openbp.data.BpReading
 import com.soberg.openbp.viewmodel.BpReadingsListViewModel
 
+@Preview
 @Composable
 fun BpReadingsListScreen(
-    viewModel: BpReadingsListViewModel
+    viewModel: BpReadingsListViewModel = BpReadingsListViewModel()
 ) {
     Surface(color = MaterialTheme.colors.background) {
         BpReadingsList(
@@ -33,9 +35,4 @@ fun BpReadingsList(
             BpReadingListItem(reading)
         }
     }
-}
-
-@Composable
-fun BpReadingListItem(reading: BpReading) {
-    Text(text = "${reading.systolic}/${reading.diastolic}")
 }
