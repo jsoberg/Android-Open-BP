@@ -47,9 +47,16 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    sourceSets{
+    sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
+
+    kotlin {
+        sourceSets.all {
+            languageSettings.enableLanguageFeature("InlineClasses")
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false

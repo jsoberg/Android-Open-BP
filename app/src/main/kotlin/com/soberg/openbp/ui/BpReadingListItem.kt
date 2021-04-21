@@ -1,6 +1,9 @@
 package com.soberg.openbp.ui
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Text
@@ -8,15 +11,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.soberg.openbp.data.BpReading
+import com.soberg.openbp.data.Pressure
 
 @Preview
 @Composable
 fun BpReadingListItem(
-    reading: BpReading = BpReading(120, 70, 0L)
+    reading: BpReading = BpReading(
+        systolic = Pressure(110),
+        diastolic = Pressure(60),
+        recordedTime = 0
+    )
 ) {
     Card(
         shape = RoundedCornerShape(4.dp),
