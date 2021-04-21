@@ -23,8 +23,7 @@ object Deps {
         }
 
         object Compose {
-            const val version = "1.0.0-beta03"
-
+            private const val version = "1.0.0-beta03"
             const val foundation = "androidx.compose.foundation:foundation:$version"
             const val layout = "androidx.compose.foundation:foundation-layout:$version"
             const val material = "androidx.compose.material:material:$version"
@@ -38,10 +37,27 @@ object Deps {
             const val viewBinding = "androidx.compose.ui:ui-viewbinding:$version"
         }
 
+        object Lifecycle {
+            private const val version = "2.3.0"
+            const val extensions = "androidx.lifecycle:lifecycle-extensions:$version"
+            const val livedata = "androidx.lifecycle:lifecycle-livedata-ktx:$version"
+            const val viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$version"
+            const val viewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha03"
+        }
+
         object Navigation {
             private const val version = "2.3.3"
             const val fragment = "androidx.navigation:navigation-fragment-ktx:$version"
             const val uiKtx = "androidx.navigation:navigation-ui-ktx:$version"
+        }
+
+        object Room {
+            private const val version = " 2.2.6"
+            const val runtime = "androidx.room:room-runtime:$version"
+            const val compiler = "androidx.room:room-compiler:$version"
+            const val kotlinExtensions = "androidx.room:room-ktx:$version"
+
+            const val test = "androidx.room:room-testing:$version"
         }
 
         object Test {
@@ -55,14 +71,6 @@ object Deps {
             }
 
             const val espressoCore = "androidx.test.espresso:espresso-core:3.3.0"
-        }
-
-        object Lifecycle {
-            private const val version = "2.3.0"
-            const val extensions = "androidx.lifecycle:lifecycle-extensions:$version"
-            const val livedata = "androidx.lifecycle:lifecycle-livedata-ktx:$version"
-            const val viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$version"
-            const val viewModelCompose = "androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha03"
         }
     }
 }

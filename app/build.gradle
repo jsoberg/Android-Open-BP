@@ -3,6 +3,7 @@ import com.soberg.openbp.buildsrc.Deps
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 dependencies {
@@ -25,6 +26,10 @@ dependencies {
     implementation Deps.AndroidX.Compose.runtime
     implementation Deps.AndroidX.Compose.runtimeLivedata
     implementation Deps.AndroidX.Compose.viewBinding
+
+    implementation Deps.AndroidX.Room.runtime
+    implementation Deps.AndroidX.Room.kotlinExtensions
+    kapt Deps.AndroidX.Room.compiler
 
     androidTestImplementation Deps.junit
     androidTestImplementation Deps.AndroidX.Test.core
