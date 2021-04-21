@@ -1,9 +1,10 @@
 package com.soberg.openbp.viewmodel
 
+import androidx.lifecycle.ViewModel
 import com.soberg.openbp.data.BpReading
 import com.soberg.openbp.data.Pressure
 
-class BpReadingsListViewModel {
+class BpReadingsListViewModel : ViewModel() {
 
     // TODO this will be Observable once I decide whether to use RxJava or Flows etc., but just return static data to test the view for now.
     fun getState() = State(
