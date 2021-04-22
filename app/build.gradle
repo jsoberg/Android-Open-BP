@@ -4,6 +4,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 dependencies {
@@ -30,6 +31,9 @@ dependencies {
     implementation Deps.AndroidX.Room.runtime
     implementation Deps.AndroidX.Room.kotlinExtensions
     kapt Deps.AndroidX.Room.compiler
+
+    implementation Deps.Hilt.android
+    kapt Deps.Hilt.compiler
 
     androidTestImplementation Deps.junit
     androidTestImplementation Deps.AndroidX.Test.core

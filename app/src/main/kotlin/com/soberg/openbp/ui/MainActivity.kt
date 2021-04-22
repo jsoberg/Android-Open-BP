@@ -6,7 +6,9 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import com.soberg.openbp.ui.theme.OpenBpTheme
 import com.soberg.openbp.viewmodel.BpReadingsListViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
     private val viewModel: BpReadingsListViewModel by viewModels()

@@ -7,6 +7,13 @@ object Deps {
     const val junit = "junit:junit:4.13"
     const val material = "com.google.android.material:material:1.1.0"
 
+    object Hilt {
+        private const val version = "2.33-beta"
+        const val gradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:$version"
+        const val android = "com.google.dagger:hilt-android:$version"
+        const val compiler = "com.google.dagger:hilt-compiler:$version"
+    }
+
     object Kotlin {
         private const val version = "1.4.32"
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$version"
@@ -23,7 +30,7 @@ object Deps {
         }
 
         object Compose {
-            private const val version = "1.0.0-beta03"
+            const val version = "1.0.0-beta03"
             const val foundation = "androidx.compose.foundation:foundation:$version"
             const val layout = "androidx.compose.foundation:foundation-layout:$version"
             const val material = "androidx.compose.material:material:$version"
