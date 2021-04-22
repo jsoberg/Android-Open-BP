@@ -19,7 +19,13 @@ inline class Pulse(private val bpm: Short) {
     override fun toString(): String = bpm.toString()
 }
 
+inline val Short.bpm: Pulse get() = Pulse(bpm = this)
+inline val Int.bpm: Pulse get() = Pulse(bpm = this.toShort())
+
 /** Pressure, in millimeters mercury (mmHg). */
 inline class Pressure(private val mmHg: Short) {
     override fun toString(): String = mmHg.toString()
 }
+
+inline val Short.mmHg: Pressure get() = Pressure(mmHg = this)
+inline val Int.mmHg: Pressure get() = Pressure(mmHg = this.toShort())

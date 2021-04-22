@@ -14,14 +14,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.soberg.openbp.data.BpReading
-import com.soberg.openbp.data.Pressure
+import com.soberg.openbp.data.mmHg
 
 @Preview
 @Composable
 fun BpReadingListItem(
     reading: BpReading = BpReading(
-        systolic = Pressure(110),
-        diastolic = Pressure(60),
+        systolic = 110.mmHg,
+        diastolic = 60.mmHg,
         recordedTime = 0
     )
 ) {
