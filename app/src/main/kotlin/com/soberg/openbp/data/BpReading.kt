@@ -1,8 +1,12 @@
 package com.soberg.openbp.data
 
-/** Visit [mayoclinic.org](https://www.mayoclinic.org/diseases-conditions/high-blood-pressure/expert-answers/pulse-pressure/faq-20058189)
+/** Database-agnostic blood pressure reading data.
+ *
+ * Visit [mayoclinic.org](https://www.mayoclinic.org/diseases-conditions/high-blood-pressure/expert-answers/pulse-pressure/faq-20058189)
  * for further information about blood pressure readings. */
 data class BpReading(
+    /** Database ID for this reading, or null if it hasn't been persisted yet. */
+    val id: Long? = null,
     /** The top/first number in a blood pressure reading, indicating the maximum pressure your heart exerts while beating. */
     val systolic: Pressure,
     /** The bottom/second number in a blood pressure reading, indicating the amount of pressure in your arteries between beats. */
