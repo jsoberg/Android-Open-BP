@@ -2,7 +2,7 @@ package com.soberg.openbp.buildsrc
 
 object Deps {
 
-    const val androidGradlePlugin = "com.android.tools.build:gradle:7.0.0-alpha14"
+    const val androidGradlePlugin = "com.android.tools.build:gradle:7.0.0-alpha15"
 
     const val junit = "junit:junit:4.13"
     const val material = "com.google.android.material:material:1.1.0"
@@ -15,7 +15,7 @@ object Deps {
     }
 
     object Kotlin {
-        private const val version = "1.4.32"
+        private const val version = "1.4.31"
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$version"
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
         const val extensions = "org.jetbrains.kotlin:kotlin-android-extensions:$version"

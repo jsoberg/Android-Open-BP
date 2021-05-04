@@ -8,6 +8,8 @@ plugins {
 }
 
 dependencies {
+    implementation project(":data")
+
     implementation Deps.Kotlin.stdlib
 
     implementation Deps.material
@@ -87,6 +89,7 @@ android {
 
     composeOptions {
         kotlinCompilerExtensionVersion Deps.AndroidX.Compose.version
+        kotlinCompilerVersion Deps.Kotlin.version
     }
 
     compileOptions {
