@@ -7,6 +7,14 @@ object Deps {
     const val junit = "junit:junit:4.13"
     const val material = "com.google.android.material:material:1.1.0"
 
+    object Sdk {
+        object Version {
+            const val minSdk = 21
+            const val compileSdk = 30
+            const val targetSdk = 30
+        }
+    }
+
     object Hilt {
         private const val version = "2.33-beta"
         const val gradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:$version"
@@ -15,7 +23,7 @@ object Deps {
     }
 
     object Kotlin {
-        private const val version = "1.4.31"
+        const val version = "1.4.31"
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$version"
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
         const val extensions = "org.jetbrains.kotlin:kotlin-android-extensions:$version"
