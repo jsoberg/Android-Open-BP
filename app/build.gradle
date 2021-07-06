@@ -13,22 +13,13 @@ dependencies {
     implementation Deps.Kotlin.stdlib
 
     implementation Deps.material
-    implementation Deps.AndroidX.Activity.activityCompose
     implementation Deps.AndroidX.coreKtx
     implementation Deps.AndroidX.appcompat
     implementation Deps.AndroidX.Lifecycle.livedata
-    implementation Deps.AndroidX.Lifecycle.viewModelCompose
+    implementation Deps.AndroidX.Lifecycle.viewmodel
     implementation Deps.AndroidX.Navigation.fragment
     implementation Deps.AndroidX.Navigation.uiKtx
-
-    implementation Deps.AndroidX.Compose.layout
-    implementation Deps.AndroidX.Compose.material
-    implementation Deps.AndroidX.Compose.materialIconsExtended
-    implementation Deps.AndroidX.Compose.tooling
-    implementation Deps.AndroidX.Compose.uiUtil
-    implementation Deps.AndroidX.Compose.runtime
-    implementation Deps.AndroidX.Compose.runtimeLivedata
-    implementation Deps.AndroidX.Compose.viewBinding
+    implementation Deps.AndroidX.ConstraintLayout.constraintLayout
 
     implementation Deps.Hilt.android
     kapt Deps.Hilt.compiler
@@ -38,7 +29,6 @@ dependencies {
     androidTestImplementation Deps.AndroidX.Test.espressoCore
     androidTestImplementation Deps.AndroidX.Test.rules
     androidTestImplementation Deps.AndroidX.Test.Ext.junit
-    androidTestImplementation Deps.AndroidX.Compose.uiTest
 }
 
 android {
@@ -72,19 +62,10 @@ android {
     }
 
     buildFeatures {
-        compose true
         viewBinding true
-
-        // Disable unused AGP features
-        buildConfig false
-        aidl false
-        renderScript false
-        resValues false
-        shaders false
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion Deps.AndroidX.Compose.version
         kotlinCompilerVersion Deps.Kotlin.version
     }
 

@@ -7,4 +7,8 @@
         <item name="android:statusBarColor">@color/status_bar</item>
     </style>
 
+    <style name="Theme.OpenBP.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.OpenBP.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" />
+
 </resources>

@@ -8,6 +8,7 @@ class BpReadingsListViewModel : ViewModel() {
 
     // TODO this will be Observable once I decide whether to use RxJava or Flows etc., but just return static data to test the view for now.
     fun getState() = State(
+        isLoading = false,
         readings = listOf(
             BpReading(systolic = Pressure(110), diastolic = Pressure(60), recordedTime = 0),
             BpReading(systolic = Pressure(120), diastolic = Pressure(70), recordedTime = 0),
@@ -16,6 +17,7 @@ class BpReadingsListViewModel : ViewModel() {
     )
 
     data class State(
+        val isLoading: Boolean,
         val readings: List<BpReading>
     )
 }
