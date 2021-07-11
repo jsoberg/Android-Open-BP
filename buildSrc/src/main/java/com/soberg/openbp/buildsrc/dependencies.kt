@@ -2,7 +2,7 @@ package com.soberg.openbp.buildsrc
 
 object Deps {
 
-    const val androidGradlePlugin = "com.android.tools.build:gradle:7.0.0-alpha15"
+    const val androidGradlePlugin = "com.android.tools.build:gradle:4.2.0"
 
     const val junit = "junit:junit:4.13"
     const val material = "com.google.android.material:material:1.3.0"
