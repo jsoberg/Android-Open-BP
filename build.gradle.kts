@@ -1,5 +1,3 @@
-import com.soberg.openbp.buildsrc.Deps
-
 buildscript {
     repositories {
         google()
@@ -8,9 +6,9 @@ buildscript {
     }
 
     dependencies {
-        classpath Deps.androidGradlePlugin
-        classpath Deps.Kotlin.gradlePlugin
-        classpath Deps.Hilt.gradlePlugin
+        classpath(Deps.androidGradlePlugin)
+        classpath(Deps.Kotlin.gradlePlugin)
+        classpath(Deps.Hilt.gradlePlugin)
     }
 }
 
@@ -22,6 +20,6 @@ allprojects {
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+tasks.register("clean", Delete::class) {
+    delete(rootProject.buildDir)
 }

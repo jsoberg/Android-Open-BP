@@ -1,5 +1,3 @@
-import com.soberg.openbp.buildsrc.Deps
-
 plugins {
     id("com.android.library")
     kotlin("android")

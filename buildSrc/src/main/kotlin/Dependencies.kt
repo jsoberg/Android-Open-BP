@@ -1,5 +1,3 @@
-package com.soberg.openbp.buildsrc
-
 object Deps {
 
     const val androidGradlePlugin = "com.android.tools.build:gradle:4.2.0"
