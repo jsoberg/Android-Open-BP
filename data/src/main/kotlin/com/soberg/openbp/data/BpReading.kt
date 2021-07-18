@@ -29,6 +29,9 @@ inline val Int.bpm: Pulse get() = Pulse(bpm = this.toShort())
 /** Pressure, in millimeters mercury (mmHg). */
 inline class Pressure(private val mmHg: Short) {
     override fun toString(): String = mmHg.toString()
+
+    operator fun compareTo(other: Pressure) = (mmHg - other.mmHg)
+
 }
 
 inline val Short.mmHg: Pressure get() = Pressure(mmHg = this)
