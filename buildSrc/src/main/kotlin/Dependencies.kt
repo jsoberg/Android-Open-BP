@@ -1,30 +1,16 @@
 object Deps {
 
-    const val androidGradlePlugin = "com.android.tools.build:gradle:4.2.0"
+    object Android {
+        const val gradlePlugin = "com.android.tools.build:gradle:4.2.0"
+        const val material = "com.google.android.material:material:1.3.0"
 
-    const val junit = "junit:junit:4.13"
-    const val material = "com.google.android.material:material:1.3.0"
-
-    object Sdk {
-        object Version {
-            const val minSdk = 21
-            const val compileSdk = 30
-            const val targetSdk = 30
+        object Sdk {
+            object Version {
+                const val minSdk = 21
+                const val compileSdk = 30
+                const val targetSdk = 30
+            }
         }
-    }
-
-    object Hilt {
-        private const val version = "2.33-beta"
-        const val gradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:$version"
-        const val android = "com.google.dagger:hilt-android:$version"
-        const val compiler = "com.google.dagger:hilt-compiler:$version"
-    }
-
-    object Kotlin {
-        const val version = "1.4.31"
-        const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$version"
-        const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
-        const val extensions = "org.jetbrains.kotlin:kotlin-android-extensions:$version"
     }
 
     object AndroidX {
@@ -70,5 +56,24 @@ object Deps {
 
             const val espressoCore = "androidx.test.espresso:espresso-core:3.3.0"
         }
+    }
+
+    object Hilt {
+        private const val version = "2.33-beta"
+        const val gradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:$version"
+        const val android = "com.google.dagger:hilt-android:$version"
+        const val compiler = "com.google.dagger:hilt-compiler:$version"
+    }
+
+    object Kotlin {
+        const val version = "1.4.31"
+        const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$version"
+        const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
+        const val extensions = "org.jetbrains.kotlin:kotlin-android-extensions:$version"
+    }
+
+    object Test {
+        const val junit = "junit:junit:4.13"
+        const val assertj = "org.assertj:assertj-core:3.20.2"
     }
 }

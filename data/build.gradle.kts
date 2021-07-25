@@ -10,17 +10,21 @@ dependencies {
     kapt(Deps.AndroidX.Room.compiler)
     implementation(Deps.AndroidX.Room.runtime)
     implementation(Deps.AndroidX.Room.kotlinExtensions)
+
+    testImplementation(Deps.Test.junit)
+    testImplementation(Deps.Test.junit)
 }
 
 android {
-    compileSdk = Deps.Sdk.Version.compileSdk
+    compileSdk = Deps.Android.Sdk.Version.compileSdk
 
     defaultConfig {
-        minSdk = Deps.Sdk.Version.minSdk
-        targetSdk = Deps.Sdk.Version.targetSdk
+        minSdk = Deps.Android.Sdk.Version.minSdk
+        targetSdk = Deps.Android.Sdk.Version.targetSdk
     }
 
     sourceSets["main"].java.srcDirs("src/main/kotlin")
+    sourceSets["test"].java.srcDirs("src/test/kotlin")
 
     kotlin {
         sourceSets.all {

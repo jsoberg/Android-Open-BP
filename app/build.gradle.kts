@@ -10,7 +10,7 @@ dependencies {
 
     implementation(Deps.Kotlin.stdlib)
 
-    implementation(Deps.material)
+    implementation(Deps.Android.material)
     implementation(Deps.AndroidX.coreKtx)
     implementation(Deps.AndroidX.appcompat)
     implementation(Deps.AndroidX.Lifecycle.livedata)
@@ -22,7 +22,7 @@ dependencies {
     implementation(Deps.Hilt.android)
     kapt(Deps.Hilt.compiler)
 
-    androidTestImplementation(Deps.junit)
+    androidTestImplementation(Deps.Test.junit)
     androidTestImplementation(Deps.AndroidX.Test.core)
     androidTestImplementation(Deps.AndroidX.Test.espressoCore)
     androidTestImplementation(Deps.AndroidX.Test.rules)
