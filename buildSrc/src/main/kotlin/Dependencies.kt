@@ -1,7 +1,7 @@
 object Deps {
 
     object Android {
-        const val gradlePlugin = "com.android.tools.build:gradle:4.2.0"
+        const val gradlePlugin = "com.android.tools.build:gradle:7.0.0"
         const val material = "com.google.android.material:material:1.3.0"
 
         object Sdk {
@@ -59,14 +59,14 @@ object Deps {
     }
 
     object Hilt {
-        private const val version = "2.33-beta"
+        private const val version = "2.38.1"
         const val gradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:$version"
         const val android = "com.google.dagger:hilt-android:$version"
         const val compiler = "com.google.dagger:hilt-compiler:$version"
     }
 
     object Kotlin {
-        const val version = "1.4.31"
+        const val version = "1.5.21"
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$version"
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
         const val extensions = "org.jetbrains.kotlin:kotlin-android-extensions:$version"

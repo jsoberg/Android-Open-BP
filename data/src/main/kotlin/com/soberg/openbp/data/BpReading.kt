@@ -19,7 +19,8 @@ data class BpReading(
 )
 
 /** Pulse rate, in beats per minute (bpm). */
-inline class Pulse(private val bpm: Short) {
+@JvmInline
+value class Pulse(private val bpm: Short) {
     override fun toString(): String = bpm.toString()
 }
 
@@ -27,7 +28,8 @@ inline val Short.bpm: Pulse get() = Pulse(bpm = this)
 inline val Int.bpm: Pulse get() = Pulse(bpm = this.toShort())
 
 /** Pressure, in millimeters mercury (mmHg). */
-inline class Pressure(private val mmHg: Short) {
+@JvmInline
+value class Pressure(private val mmHg: Short) {
     override fun toString(): String = mmHg.toString()
 
     operator fun compareTo(other: Pressure) = (mmHg - other.mmHg)

@@ -2,7 +2,7 @@ package com.soberg.openbp.viewmodel
 
 import androidx.lifecycle.ViewModel
 import com.soberg.openbp.data.BpReading
-import com.soberg.openbp.data.Pressure
+import com.soberg.openbp.data.mmHg
 
 class BpReadingsListViewModel : ViewModel() {
 
@@ -10,9 +10,9 @@ class BpReadingsListViewModel : ViewModel() {
     fun getState() = State(
         isLoading = false,
         readings = listOf(
-            BpReading(systolic = Pressure(110), diastolic = Pressure(60), recordedTime = 0),
-            BpReading(systolic = Pressure(120), diastolic = Pressure(70), recordedTime = 0),
-            BpReading(systolic = Pressure(130), diastolic = Pressure(80), recordedTime = 0),
+            BpReading(systolic = 110.mmHg, diastolic = 60.mmHg, recordedTime = 0),
+            BpReading(systolic = 120.mmHg, diastolic = 70.mmHg, recordedTime = 0),
+            BpReading(systolic = 130.mmHg, diastolic = 80.mmHg, recordedTime = 0),
         )
     )
 
