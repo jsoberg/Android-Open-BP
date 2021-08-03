@@ -28,12 +28,6 @@ android {
 
     sourceSets["main"].java.srcDirs("src/main/kotlin")
     sourceSets["test"].java.srcDirs("src/test/kotlin")
-
-    kotlin {
-        sourceSets.all {
-            languageSettings.enableLanguageFeature("InlineClasses")
-        }
-    }
 }
 
 java {
