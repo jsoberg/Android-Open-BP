@@ -11,6 +11,9 @@ dependencies {
     implementation(Deps.AndroidX.Room.runtime)
     implementation(Deps.AndroidX.Room.kotlinExtensions)
 
+    kapt(Deps.Hilt.compiler)
+    implementation(Deps.Hilt.android)
+
     testImplementation(Deps.Test.junit)
     testImplementation(Deps.Test.junit)
 }

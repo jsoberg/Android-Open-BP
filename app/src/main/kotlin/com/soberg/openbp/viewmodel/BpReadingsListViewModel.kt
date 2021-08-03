@@ -2,19 +2,24 @@ package com.soberg.openbp.viewmodel
 
 import androidx.lifecycle.ViewModel
 import com.soberg.openbp.data.BpReading
-import com.soberg.openbp.data.mmHg
+import com.soberg.openbp.data.BpReadingRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.map
+import javax.inject.Inject
 
-class BpReadingsListViewModel : ViewModel() {
+@HiltViewModel
+class BpReadingsListViewModel @Inject constructor(
+    private val repository: BpReadingRepository
+) : ViewModel() {
 
     // TODO this will be Observable once I decide whether to use RxJava or Flows etc., but just return static data to test the view for now.
-    fun getState() = State(
-        isLoading = false,
-        readings = listOf(
-            BpReading(systolic = 110.mmHg, diastolic = 60.mmHg, recordedTime = 0),
-            BpReading(systolic = 120.mmHg, diastolic = 70.mmHg, recordedTime = 0),
-            BpReading(systolic = 130.mmHg, diastolic = 80.mmHg, recordedTime = 0),
-        )
-    )
+    fun getState() = repository.getAll()
+        .map { readings ->
+            State(
+                isLoading = false,
+                readings = readings
+            )
+        }
 
     data class State(
         val isLoading: Boolean,

@@ -9,7 +9,7 @@ import com.soberg.openbp.data.mmHg
 import com.soberg.openbp.data.room.RoomBpReading.Companion.TABLE_NAME
 
 @Entity(tableName = TABLE_NAME)
-data class RoomBpReading(
+internal data class RoomBpReading(
     @PrimaryKey(autoGenerate = true) val id: Long,
     @ColumnInfo(name = SYSTOLIC) val systolic: Short,
     @ColumnInfo(name = DIASTOLIC) val diastolic: Short,
@@ -34,3 +34,11 @@ data class RoomBpReading(
         pulse = pulse?.bpm,
     )
 }
+
+internal fun BpReading.toRoomModel() = RoomBpReading(
+    id = id ?: 0L,
+    systolic = systolic.mmHg,
+    diastolic = diastolic.mmHg,
+    recordedTime = recordedTime,
+    pulse = pulse?.bpm,
+)

@@ -30,7 +30,7 @@ class BpReadingListFragment : Fragment(R.layout.bp_reading_list_fragment) {
         viewBinding.bpReadingList.adapter = adapter
 
         // TODO Reactively listen to state changes.
-        onStateChange(viewModel.getState())
+        onStateChange(BpReadingsListViewModel.State(false, emptyList()))
         return viewBinding.root
     }
 
