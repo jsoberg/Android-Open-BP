@@ -10,7 +10,7 @@
         android:theme="@style/Theme.OpenBP">
 
         <activity
-            android:name=".ui.MainActivity"
+            android:name="com.soberg.openbp.readings.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

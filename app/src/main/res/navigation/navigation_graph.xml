@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/bpReadingListFragment"
-        android:name="com.soberg.openbp.ui.list.BpReadingListFragment"
+        android:name="com.soberg.openbp.readings.view.BpReadingListFragment"
         android:label="@string/app_name">
 
     </fragment>

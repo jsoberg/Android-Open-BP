@@ -1,4 +1,4 @@
-package com.soberg.openbp.ui.list
+package com.soberg.openbp.readings.view
 
 import androidx.recyclerview.widget.DiffUtil
 import com.soberg.openbp.data.BpReading

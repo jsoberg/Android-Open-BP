@@ -1,4 +1,4 @@
-package com.soberg.openbp.ui
+package com.soberg.openbp.readings
 
 import android.os.Bundle
 import android.view.MenuItem

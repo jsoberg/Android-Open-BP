@@ -1,4 +1,4 @@
-package com.soberg.openbp.viewmodel
+package com.soberg.openbp.readings
 
 import androidx.lifecycle.ViewModel
 import com.soberg.openbp.data.BpReading

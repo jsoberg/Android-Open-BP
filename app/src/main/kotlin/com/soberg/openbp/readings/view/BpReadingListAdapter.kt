@@ -1,4 +1,4 @@
-package com.soberg.openbp.ui.list
+package com.soberg.openbp.readings.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.soberg.openbp.data.BpReading
 import com.soberg.openbp.databinding.BpReadingListItemBinding
-import com.soberg.openbp.ui.list.BpReadingListAdapter.ViewHolder
+import com.soberg.openbp.readings.view.BpReadingListAdapter.ViewHolder
 
 class BpReadingListAdapter() : ListAdapter<BpReading, ViewHolder>(BpReadingDiffUtil()) {
 

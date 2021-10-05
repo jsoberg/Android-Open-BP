@@ -1,4 +1,4 @@
-package com.soberg.openbp.ui.list
+package com.soberg.openbp.readings.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.soberg.openbp.R
 import com.soberg.openbp.databinding.BpReadingListFragmentBinding
-import com.soberg.openbp.viewmodel.BpReadingsListViewModel
+import com.soberg.openbp.readings.BpReadingsListViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
