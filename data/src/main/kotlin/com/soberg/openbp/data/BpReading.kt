@@ -12,7 +12,7 @@ data class BpReading(
     /** The bottom/second number in a blood pressure reading, indicating the amount of pressure in your arteries between beats. */
     val diastolic: Pressure,
     /** The time when this reading was recorded, in milliseconds since the Unix epoch. */
-    val recordedTime: Long,
+    val recordedTime: Long = System.currentTimeMillis(),
 
     /** Optional pulse rate corresponding to this blood pressure reading. */
     val pulse: Pulse? = null
