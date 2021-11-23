@@ -5,16 +5,15 @@ plugins {
 }
 
 dependencies {
-    implementation(Deps.Kotlin.stdlib)
+    api(Deps.Kotlin.stdlib)
 
     kapt(Deps.AndroidX.Room.compiler)
-    implementation(Deps.AndroidX.Room.runtime)
-    implementation(Deps.AndroidX.Room.kotlinExtensions)
+    api(Deps.AndroidX.Room.runtime)
+    api(Deps.AndroidX.Room.kotlinExtensions)
 
     kapt(Deps.Hilt.compiler)
     implementation(Deps.Hilt.android)
 
-    testImplementation(Deps.Test.junit)
     testImplementation(Deps.Test.junit)
 }
 
@@ -27,7 +26,9 @@ android {
     }
 
     sourceSets["main"].java.srcDirs("src/main/kotlin")
-    sourceSets["test"].java.srcDirs("src/test/kotlin")
+    sourceSets["test"].java.srcDirs(
+        "src/unitTest/kotlin",
+    )
 }
 
 java {
