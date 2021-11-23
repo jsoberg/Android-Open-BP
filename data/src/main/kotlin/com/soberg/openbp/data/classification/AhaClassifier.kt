@@ -1,15 +1,14 @@
 package com.soberg.openbp.data.classification
 
 import com.soberg.openbp.data.BpReading
-import com.soberg.openbp.data.classification.Classification.Category
-import com.soberg.openbp.data.classification.Classification.Category.*
+import com.soberg.openbp.data.classification.Classification.*
 import com.soberg.openbp.data.mmHg
 
 /** Blood pressure classification from the American Heart Association (AHA).
  * See [heart.org](https://www.heart.org/en/health-topics/high-blood-pressure/understanding-blood-pressure-readings) for further information. */
-class AmericanHeartAssociationClassification : Classification {
+class AhaClassifier : Classifier {
 
-    override fun classify(reading: BpReading): Category {
+    override fun classify(reading: BpReading): Classification {
         val sys = reading.systolic
         val dia = reading.diastolic
         return when {
