@@ -15,6 +15,7 @@ dependencies {
     implementation(Deps.Hilt.android)
 
     testImplementation(Deps.Test.junit)
+    testImplementation(Deps.Test.assertj)
 }
 
 android {
