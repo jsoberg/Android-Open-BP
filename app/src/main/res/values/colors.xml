@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="cyan700">#0097a7</color>
-    <color name="cyan900">#006064</color>
-    <color name="status_bar">@color/cyan900</color>
-</resources>

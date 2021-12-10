@@ -30,6 +30,12 @@ dependencies {
 }
 
 android {
+
+    compileOptions {
+        sourceCompatibility(JavaVersion.VERSION_1_8)
+        targetCompatibility(JavaVersion.VERSION_1_8)
+    }
+    
     compileSdkVersion(30)
 
     defaultConfig {
@@ -46,12 +52,6 @@ android {
         sourceSets["main"].java.srcDirs("src/main/kotlin")
     }
 
-    kotlin {
-        sourceSets.all {
-            languageSettings.enableLanguageFeature("InlineClasses")
-        }
-    }
-
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
@@ -60,15 +60,6 @@ android {
                 "proguard-rules.pro"
             )
         }
-    }
-
-    buildFeatures {
-        viewBinding = true
-    }
-
-    compileOptions {
-        sourceCompatibility(JavaVersion.VERSION_1_8)
-        targetCompatibility(JavaVersion.VERSION_1_8)
     }
 
     kotlinOptions {
