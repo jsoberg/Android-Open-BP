@@ -1,4 +1,4 @@
-package com.soberg.openbp.data.room
+package com.soberg.openbp.data.room.reading
 
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow

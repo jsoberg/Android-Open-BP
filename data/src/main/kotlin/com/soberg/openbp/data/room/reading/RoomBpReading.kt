@@ -1,12 +1,12 @@
-package com.soberg.openbp.data.room
+package com.soberg.openbp.data.room.reading
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.soberg.openbp.data.BpReading
-import com.soberg.openbp.data.bpm
-import com.soberg.openbp.data.mmHg
-import com.soberg.openbp.data.room.RoomBpReading.Companion.TABLE_NAME
+import com.soberg.openbp.data.room.reading.RoomBpReading.Companion.TABLE_NAME
+import com.soberg.openbp.domain.reading.BpReading
+import com.soberg.openbp.domain.reading.bpm
+import com.soberg.openbp.domain.reading.mmHg
 
 @Entity(tableName = TABLE_NAME)
 internal data class RoomBpReading(

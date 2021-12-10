@@ -1,3 +1,4 @@
 rootProject.name = "Android Open BP"
 include ':app'
 include ':data'
+include ':domain'

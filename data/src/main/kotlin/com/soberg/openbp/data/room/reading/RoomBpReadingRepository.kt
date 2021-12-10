@@ -1,7 +1,7 @@
-package com.soberg.openbp.data.room
+package com.soberg.openbp.data.room.reading
 
-import com.soberg.openbp.data.BpReading
-import com.soberg.openbp.data.BpReadingRepository
+import com.soberg.openbp.domain.reading.BpReading
+import com.soberg.openbp.domain.reading.BpReadingRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
@@ -9,7 +9,7 @@ import javax.inject.Inject
 internal class RoomBpReadingRepository @Inject constructor(
     private val bpReadingDao: RoomBpReadingDao
 ) : BpReadingRepository {
-    
+
     override fun getAll(): Flow<List<BpReading>> =
         bpReadingDao.getAll()
             .map { readings ->

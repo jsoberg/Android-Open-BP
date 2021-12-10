@@ -1,8 +1,8 @@
-package com.soberg.openbp.data.classification
+package com.soberg.openbp.domain.classification
 
-import com.soberg.openbp.data.BpReading
-import com.soberg.openbp.data.classification.Classification.*
-import com.soberg.openbp.data.mmHg
+import com.soberg.openbp.domain.classification.Classification.*
+import com.soberg.openbp.domain.reading.BpReading
+import com.soberg.openbp.domain.reading.mmHg
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 

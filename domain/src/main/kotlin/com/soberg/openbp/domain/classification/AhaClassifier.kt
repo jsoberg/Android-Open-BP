@@ -1,8 +1,8 @@
-package com.soberg.openbp.data.classification
+package com.soberg.openbp.domain.classification
 
-import com.soberg.openbp.data.BpReading
-import com.soberg.openbp.data.classification.Classification.*
-import com.soberg.openbp.data.mmHg
+import com.soberg.openbp.domain.classification.Classification.*
+import com.soberg.openbp.domain.reading.BpReading
+import com.soberg.openbp.domain.reading.mmHg
 
 /** Blood pressure classification from the American Heart Association (AHA).
  * See [heart.org](https://www.heart.org/en/health-topics/high-blood-pressure/understanding-blood-pressure-readings) for further information. */

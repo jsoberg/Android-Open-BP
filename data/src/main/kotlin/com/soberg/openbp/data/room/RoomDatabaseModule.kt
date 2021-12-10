@@ -2,7 +2,9 @@ package com.soberg.openbp.data.room
 
 import android.content.Context
 import androidx.room.Room
-import com.soberg.openbp.data.BpReadingRepository
+import com.soberg.openbp.data.room.reading.RoomBpReadingDao
+import com.soberg.openbp.data.room.reading.RoomBpReadingRepository
+import com.soberg.openbp.domain.reading.BpReadingRepository
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

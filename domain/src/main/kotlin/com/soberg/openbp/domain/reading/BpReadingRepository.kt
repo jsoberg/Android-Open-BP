@@ -1,6 +1,5 @@
-package com.soberg.openbp.data
+package com.soberg.openbp.domain.reading
 
-import com.soberg.openbp.data.room.RoomBpReading
 import kotlinx.coroutines.flow.Flow
 
 interface BpReadingRepository {

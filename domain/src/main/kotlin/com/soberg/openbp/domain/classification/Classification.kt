@@ -1,4 +1,4 @@
-package com.soberg.openbp.data.classification
+package com.soberg.openbp.domain.classification
 
 /** List of classification types for blood pressure readings. */
 enum class Classification {

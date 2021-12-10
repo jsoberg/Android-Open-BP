@@ -1,8 +1,8 @@
 package com.soberg.openbp.readings
 
 import androidx.lifecycle.ViewModel
-import com.soberg.openbp.data.BpReading
-import com.soberg.openbp.data.BpReadingRepository
+import com.soberg.openbp.domain.reading.BpReading
+import com.soberg.openbp.domain.reading.BpReadingRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject

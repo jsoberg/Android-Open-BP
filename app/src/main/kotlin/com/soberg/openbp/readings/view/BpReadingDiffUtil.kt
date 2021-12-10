@@ -1,7 +1,7 @@
 package com.soberg.openbp.readings.view
 
 import androidx.recyclerview.widget.DiffUtil
-import com.soberg.openbp.data.BpReading
+import com.soberg.openbp.domain.reading.BpReading
 
 class BpReadingDiffUtil : DiffUtil.ItemCallback<BpReading>() {
 

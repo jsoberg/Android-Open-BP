@@ -5,7 +5,7 @@ plugins {
 }
 
 dependencies {
-    api(Deps.Kotlin.stdlib)
+    api(project(":domain"))
 
     kapt(Deps.AndroidX.Room.compiler)
     api(Deps.AndroidX.Room.runtime)
