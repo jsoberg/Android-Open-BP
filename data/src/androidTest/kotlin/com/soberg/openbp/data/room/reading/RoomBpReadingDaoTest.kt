@@ -5,8 +5,7 @@ import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.soberg.openbp.data.room.OpenBpRoomDatabase
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.runBlockingTest
+import kotlinx.coroutines.runBlocking
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.After
 import org.junit.Before
@@ -14,8 +13,6 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import kotlin.random.Random
 
-// TODO Remove annotation when runBlockingTest is no longer marked as experimental.
-@ExperimentalCoroutinesApi
 @RunWith(AndroidJUnit4::class)
 class RoomBpReadingDaoTest {
 
@@ -37,12 +34,14 @@ class RoomBpReadingDaoTest {
     }
 
     @Test
-    fun loadByIdReturnsExpectedBpReading() = runBlockingTest {
-        val firstReading = createNewReading()
-        val id = dao.upsert(firstReading)
-        val loaded = dao.loadById(id)
-        val expected = firstReading.copy(id = id)
-        assertThat(loaded).isEqualTo(expected)
+    fun loadByIdReturnsExpectedBpReading() {
+        runBlocking {
+            val firstReading = createNewReading()
+            val id = dao.upsert(firstReading)
+            val loaded = dao.loadById(id)
+            val expected = firstReading.copy(id = id)
+            assertThat(loaded).isEqualTo(expected)
+        }
     }
 
     private fun createNewReading() = RoomBpReading(

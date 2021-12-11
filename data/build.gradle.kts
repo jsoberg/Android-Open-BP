@@ -16,8 +16,8 @@ dependencies {
 
     androidTestImplementation(Deps.Android.Test.assertj)
     androidTestImplementation(Deps.AndroidX.Test.core)
+    androidTestImplementation(Deps.AndroidX.Test.rules)
     androidTestImplementation(Deps.AndroidX.Test.Ext.junit)
-    androidTestImplementation(Deps.Kotlin.Coroutines.test)
 }
 
 android {
@@ -31,15 +31,6 @@ android {
         minSdk = Deps.Android.Sdk.Version.minSdk
         targetSdk = Deps.Android.Sdk.Version.targetSdk
         testInstrumentationRunner = TestRunner.androidJUnit
-    }
-
-    packagingOptions {
-        resources {
-            // Workaround for issues with Kotlin coroutines-test dependency.
-            // See https://github.com/Kotlin/kotlinx.coroutines/issues/2023.
-            excludes += "META-INF/AL2.0"
-            excludes += "META-INF/LGPL2.1"
-        }
     }
 
     sourceSets["main"].java.srcDirs("src/main/kotlin")
