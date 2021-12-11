@@ -2,13 +2,12 @@ object Deps {
 
     object Android {
         const val gradlePlugin = "com.android.tools.build:gradle:7.0.0"
-        const val material = "com.google.android.material:material:1.3.0"
 
         object Sdk {
             object Version {
                 const val minSdk = 21
-                const val compileSdk = 30
-                const val targetSdk = 30
+                const val compileSdk = 31
+                const val targetSdk = 31
             }
         }
 
@@ -18,27 +17,6 @@ object Deps {
     }
 
     object AndroidX {
-        const val appcompat = "androidx.appcompat:appcompat:1.3.0-beta01"
-        const val coreKtx = "androidx.core:core-ktx:1.5.0-beta03"
-
-        object ConstraintLayout {
-            private const val version = "2.0.4"
-            const val constraintLayout = "androidx.constraintlayout:constraintlayout:$version"
-        }
-
-        object Lifecycle {
-            private const val version = "2.3.0"
-            const val extensions = "androidx.lifecycle:lifecycle-extensions:$version"
-            const val livedata = "androidx.lifecycle:lifecycle-livedata-ktx:$version"
-            const val viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$version"
-        }
-
-        object Navigation {
-            private const val version = "2.3.3"
-            const val fragment = "androidx.navigation:navigation-fragment-ktx:$version"
-            const val uiKtx = "androidx.navigation:navigation-ui-ktx:$version"
-        }
-
         object Room {
             private const val version = "2.2.6"
             const val runtime = "androidx.room:room-runtime:$version"
@@ -58,8 +36,6 @@ object Deps {
                 private const val version = "1.1.3"
                 const val junit = "androidx.test.ext:junit-ktx:$version"
             }
-
-            const val espressoCore = "androidx.test.espresso:espresso-core:3.3.0"
         }
     }
 
@@ -71,12 +47,12 @@ object Deps {
     }
 
     object Kotlin {
-        private const val version = "1.5.21"
+        private const val version = "1.5.31"
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$version"
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
 
         object Coroutines {
-            private const val version = "1.3.9"
+            private const val version = "1.5.2"
             const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version"
             const val test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$version"
         }
