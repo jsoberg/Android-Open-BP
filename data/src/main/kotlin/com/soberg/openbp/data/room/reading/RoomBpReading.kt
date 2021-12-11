@@ -10,7 +10,7 @@ import com.soberg.openbp.domain.reading.mmHg
 
 @Entity(tableName = TABLE_NAME)
 internal data class RoomBpReading(
-    @PrimaryKey(autoGenerate = true) val id: Long,
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
     @ColumnInfo(name = SYSTOLIC) val systolic: Short,
     @ColumnInfo(name = DIASTOLIC) val diastolic: Short,
     @ColumnInfo(name = RECORDED_TIME) val recordedTime: Long,

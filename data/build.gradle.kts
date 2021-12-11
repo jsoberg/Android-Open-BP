@@ -14,25 +14,34 @@ dependencies {
     kapt(Deps.Hilt.compiler)
     implementation(Deps.Hilt.android)
 
-    testImplementation(Deps.Test.junit)
-    testImplementation(Deps.Test.assertj)
+    androidTestImplementation(Deps.Android.Test.assertj)
+    androidTestImplementation(Deps.AndroidX.Test.core)
+    androidTestImplementation(Deps.AndroidX.Test.Ext.junit)
+    androidTestImplementation(Deps.Kotlin.Coroutines.test)
 }
 
 android {
-    compileSdk = Deps.Android.Sdk.Version.compileSdk
+    compileOptions {
+        sourceCompatibility(JavaVersion.VERSION_1_8)
+        targetCompatibility(JavaVersion.VERSION_1_8)
+    }
 
+    compileSdk = Deps.Android.Sdk.Version.compileSdk
     defaultConfig {
         minSdk = Deps.Android.Sdk.Version.minSdk
         targetSdk = Deps.Android.Sdk.Version.targetSdk
+        testInstrumentationRunner = TestRunner.androidJUnit
+    }
+
+    packagingOptions {
+        resources {
+            // Workaround for issues with Kotlin coroutines-test dependency.
+            // See https://github.com/Kotlin/kotlinx.coroutines/issues/2023.
+            excludes += "META-INF/AL2.0"
+            excludes += "META-INF/LGPL2.1"
+        }
     }
 
     sourceSets["main"].java.srcDirs("src/main/kotlin")
-    sourceSets["test"].java.srcDirs(
-        "src/unitTest/kotlin",
-    )
-}
-
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceSets["test"].java.srcDirs("src/androidTest/kotlin")
 }

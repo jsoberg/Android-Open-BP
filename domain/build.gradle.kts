@@ -10,7 +10,7 @@ java {
 
 dependencies {
     api(Deps.Kotlin.stdlib)
-    api(Deps.Kotlin.coroutines)
+    api(Deps.Kotlin.Coroutines.core)
 
     testImplementation(Deps.Test.junit)
     testImplementation(Deps.Test.assertj)

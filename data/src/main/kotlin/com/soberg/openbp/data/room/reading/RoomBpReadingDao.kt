@@ -9,7 +9,7 @@ internal interface RoomBpReadingDao {
     fun getAll(): Flow<List<RoomBpReading>>
 
     @Query("SELECT * FROM ${RoomBpReading.TABLE_NAME} WHERE ${RoomBpReading.ID} = :id")
-    fun loadById(id: Long): Flow<RoomBpReading>
+    suspend fun loadById(id: Long): RoomBpReading
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(reading: RoomBpReading): Long

@@ -11,6 +11,10 @@ object Deps {
                 const val targetSdk = 30
             }
         }
+
+        object Test {
+            const val assertj = "com.squareup.assertj:assertj-android:1.0.0"
+        }
     }
 
     object AndroidX {
@@ -48,9 +52,10 @@ object Deps {
             private const val version = "1.3.0"
             const val core = "androidx.test:core:$version"
             const val rules = "androidx.test:rules:$version"
+            const val runner = "androidx.test:runner:$version"
 
             object Ext {
-                private const val version = "1.1.2"
+                private const val version = "1.1.3"
                 const val junit = "androidx.test.ext:junit-ktx:$version"
             }
 
@@ -70,12 +75,21 @@ object Deps {
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$version"
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
 
-        private const val coroutinesVersion = "1.3.9"
-        const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+        object Coroutines {
+            private const val version = "1.3.9"
+            const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version"
+            const val test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$version"
+        }
     }
 
     object Test {
         const val junit = "junit:junit:4.13"
-        const val assertj = "org.assertj:assertj-core:3.20.2"
+
+        private const val assertjVersion = "3.21.0"
+        const val assertj = "org.assertj:assertj-core:$assertjVersion"
     }
+}
+
+object TestRunner {
+    const val androidJUnit = "androidx.test.runner.AndroidJUnitRunner"
 }
