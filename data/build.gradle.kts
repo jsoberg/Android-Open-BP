@@ -26,6 +26,10 @@ android {
         targetCompatibility(JavaVersion.VERSION_1_8)
     }
 
+    kotlinOptions {
+        allWarningsAsErrors = true
+    }
+
     compileSdk = Deps.Android.Sdk.Version.compileSdk
     defaultConfig {
         minSdk = Deps.Android.Sdk.Version.minSdk

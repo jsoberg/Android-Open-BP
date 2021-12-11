@@ -10,42 +10,29 @@ dependencies {
 
     implementation(Deps.Kotlin.stdlib)
 
-    implementation(Deps.Android.material)
-    implementation(Deps.AndroidX.coreKtx)
-    implementation(Deps.AndroidX.appcompat)
-    implementation(Deps.AndroidX.Lifecycle.livedata)
-    implementation(Deps.AndroidX.Lifecycle.viewmodel)
-    implementation(Deps.AndroidX.Navigation.fragment)
-    implementation(Deps.AndroidX.Navigation.uiKtx)
-    implementation(Deps.AndroidX.ConstraintLayout.constraintLayout)
-
-    implementation(Deps.Hilt.android)
     kapt(Deps.Hilt.compiler)
-
-    androidTestImplementation(Deps.Test.junit)
-    androidTestImplementation(Deps.AndroidX.Test.core)
-    androidTestImplementation(Deps.AndroidX.Test.espressoCore)
-    androidTestImplementation(Deps.AndroidX.Test.rules)
-    androidTestImplementation(Deps.AndroidX.Test.Ext.junit)
+    implementation(Deps.Hilt.android)
 }
 
 android {
-
     compileOptions {
         sourceCompatibility(JavaVersion.VERSION_1_8)
         targetCompatibility(JavaVersion.VERSION_1_8)
     }
-    
-    compileSdkVersion(30)
 
+    kotlinOptions {
+        allWarningsAsErrors = true
+    }
+
+    compileSdk = Deps.Android.Sdk.Version.compileSdk
     defaultConfig {
         applicationId = "com.soberg.openbp"
-        minSdkVersion(21)
-        targetSdkVersion(30)
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        minSdk = Deps.Android.Sdk.Version.minSdk
+        targetSdk = Deps.Android.Sdk.Version.targetSdk
+        testInstrumentationRunner = TestRunner.androidJUnit
     }
 
     sourceSets {
@@ -60,10 +47,5 @@ android {
                 "proguard-rules.pro"
             )
         }
-    }
-
-    kotlinOptions {
-        allWarningsAsErrors = true
-        jvmTarget = "1.8"
     }
 }
