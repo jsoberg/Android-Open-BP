@@ -10,10 +10,13 @@ dependencies {
 
     implementation(Deps.Kotlin.stdlib)
 
-    implementation(Deps.AndroidX.Compose.runtime)
+    implementation(Deps.AndroidX.Compose.activity)
     implementation(Deps.AndroidX.Compose.foundation)
-    implementation(Deps.AndroidX.Lifecycle.viewModel)
+    implementation(Deps.AndroidX.Compose.material)
+    implementation(Deps.AndroidX.Compose.runtime)
+    implementation(Deps.AndroidX.Compose.tooling)
     implementation(Deps.AndroidX.Lifecycle.composeViewModelUtilities)
+    implementation(Deps.AndroidX.Lifecycle.viewModel)
 
     kapt(Deps.Hilt.compiler)
     implementation(Deps.Hilt.android)

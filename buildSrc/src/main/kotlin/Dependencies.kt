@@ -18,6 +18,9 @@ object Deps {
 
     object AndroidX {
         object Compose {
+            private const val activityVersion = "1.4.0"
+            const val activity = "androidx.activity:activity-compose:$activityVersion"
+
             private const val version = "1.0.5"
             const val animation = "androidx.compose.animation:animation:$version"
             const val foundation = "androidx.compose.foundation:foundation:$version"
