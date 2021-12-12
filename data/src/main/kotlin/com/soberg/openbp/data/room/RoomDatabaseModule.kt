@@ -3,8 +3,8 @@ package com.soberg.openbp.data.room
 import android.content.Context
 import androidx.room.Room
 import com.soberg.openbp.data.room.reading.RoomBpReadingDao
-import com.soberg.openbp.data.room.reading.RoomBpReadingRepository
-import com.soberg.openbp.domain.reading.BpReadingRepository
+import com.soberg.openbp.data.room.reading.RoomBpReadingDataSource
+import com.soberg.openbp.domain.reading.BpReadingDataSource
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -33,5 +33,5 @@ internal abstract class RoomDatabaseModule {
     }
 
     @Binds
-    internal abstract fun provideRepository(repository: RoomBpReadingRepository): BpReadingRepository
+    internal abstract fun provideDataSource(dataSource: RoomBpReadingDataSource): BpReadingDataSource
 }
