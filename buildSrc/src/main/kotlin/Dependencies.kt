@@ -17,6 +17,17 @@ object Deps {
     }
 
     object AndroidX {
+        object Compose {
+            private const val version = "1.0.5"
+            const val animation = "androidx.compose.animation:animation:$version"
+            const val foundation = "androidx.compose.foundation:foundation:$version"
+            const val material = "androidx.compose.material:material:$version"
+            const val runtime = "androidx.compose.runtime:runtime:$version"
+            const val tooling = "androidx.compose.ui:ui-tooling:$version"
+
+            const val kotlinCompilerExtensionVersion = "1.0.5"
+        }
+
         object Room {
             private const val version = "2.2.6"
             const val runtime = "androidx.room:room-runtime:$version"

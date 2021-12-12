@@ -10,6 +10,9 @@ dependencies {
 
     implementation(Deps.Kotlin.stdlib)
 
+    implementation(Deps.AndroidX.Compose.runtime)
+    implementation(Deps.AndroidX.Compose.foundation)
+
     kapt(Deps.Hilt.compiler)
     implementation(Deps.Hilt.android)
 }
@@ -18,6 +21,14 @@ android {
     compileOptions {
         sourceCompatibility(JavaVersion.VERSION_1_8)
         targetCompatibility(JavaVersion.VERSION_1_8)
+    }
+
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = Deps.AndroidX.Compose.kotlinCompilerExtensionVersion
     }
 
     kotlinOptions {
