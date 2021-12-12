@@ -12,6 +12,8 @@ dependencies {
 
     implementation(Deps.AndroidX.Compose.runtime)
     implementation(Deps.AndroidX.Compose.foundation)
+    implementation(Deps.AndroidX.Lifecycle.viewModel)
+    implementation(Deps.AndroidX.Lifecycle.composeViewModelUtilities)
 
     kapt(Deps.Hilt.compiler)
     implementation(Deps.Hilt.android)

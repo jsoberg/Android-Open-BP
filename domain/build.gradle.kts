@@ -9,6 +9,7 @@ java {
 }
 
 dependencies {
+    api(Deps.Dagger.core)
     api(Deps.Kotlin.stdlib)
     api(Deps.Kotlin.Coroutines.core)
 

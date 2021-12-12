@@ -28,6 +28,13 @@ object Deps {
             const val kotlinCompilerExtensionVersion = "1.0.5"
         }
 
+        object Lifecycle {
+            private const val version = "2.4.0"
+            const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$version"
+            const val composeViewModelUtilities =
+                "androidx.lifecycle:lifecycle-viewmodel-compose:$version"
+        }
+
         object Room {
             private const val version = "2.2.6"
             const val runtime = "androidx.room:room-runtime:$version"
@@ -50,11 +57,16 @@ object Deps {
         }
     }
 
+    object Dagger {
+        const val version = "2.40.5"
+        const val core = "com.google.dagger:dagger:$version"
+    }
+
     object Hilt {
-        private const val version = "2.38.1"
-        const val gradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:$version"
-        const val android = "com.google.dagger:hilt-android:$version"
-        const val compiler = "com.google.dagger:hilt-compiler:$version"
+        const val androidGradlePlugin =
+            "com.google.dagger:hilt-android-gradle-plugin:${Dagger.version}"
+        const val android = "com.google.dagger:hilt-android:${Dagger.version}"
+        const val compiler = "com.google.dagger:hilt-compiler:${Dagger.version}"
     }
 
     object Kotlin {
