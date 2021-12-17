@@ -1,100 +1,76 @@
 object Deps {
-
     object Android {
-        const val gradlePlugin = "com.android.tools.build:gradle:7.0.0"
-
-        object Sdk {
-            object Version {
-                const val minSdk = 21
-                const val compileSdk = 31
-                const val targetSdk = 31
-            }
-        }
+        const val gradlePlugin = "com.android.tools.build:gradle:${Versions.Android.agp}"
 
         object Test {
-            const val assertj = "com.squareup.assertj:assertj-android:1.0.0"
+            const val assertj = "com.squareup.assertj:assertj-android:${Versions.Android.assertJ}"
         }
     }
 
     object AndroidX {
         object Compose {
-            private const val activityVersion = "1.4.0"
-            const val activity = "androidx.activity:activity-compose:$activityVersion"
+            const val activity =
+                "androidx.activity:activity-compose:${Versions.AndroidX.Compose.activity}"
 
-            private const val version = "1.0.5"
-            const val animation = "androidx.compose.animation:animation:$version"
-            const val foundation = "androidx.compose.foundation:foundation:$version"
-            const val material = "androidx.compose.material:material:$version"
-            const val runtime = "androidx.compose.runtime:runtime:$version"
-            const val tooling = "androidx.compose.ui:ui-tooling:$version"
-
-            const val kotlinCompilerExtensionVersion = "1.0.5"
+            const val animation =
+                "androidx.compose.animation:animation:${Versions.AndroidX.Compose.version}"
+            const val foundation =
+                "androidx.compose.foundation:foundation:${Versions.AndroidX.Compose.version}"
+            const val material =
+                "androidx.compose.material:material:${Versions.AndroidX.Compose.version}"
+            const val runtime =
+                "androidx.compose.runtime:runtime:${Versions.AndroidX.Compose.version}"
+            const val tooling =
+                "androidx.compose.ui:ui-tooling:${Versions.AndroidX.Compose.version}"
         }
 
         object Lifecycle {
-            private const val version = "2.4.0"
-            const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$version"
+            const val viewModel =
+                "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.AndroidX.lifecycle}"
             const val composeViewModelUtilities =
-                "androidx.lifecycle:lifecycle-viewmodel-compose:$version"
+                "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.AndroidX.lifecycle}"
         }
 
         object Room {
-            private const val version = "2.2.6"
-            const val runtime = "androidx.room:room-runtime:$version"
-            const val compiler = "androidx.room:room-compiler:$version"
-            const val kotlinExtensions = "androidx.room:room-ktx:$version"
+            const val runtime = "androidx.room:room-runtime:${Versions.AndroidX.room}"
+            const val compiler = "androidx.room:room-compiler:${Versions.AndroidX.room}"
+            const val kotlinExtensions = "androidx.room:room-ktx:${Versions.AndroidX.room}"
 
-            const val test = "androidx.room:room-testing:$version"
+            const val test = "androidx.room:room-testing:${Versions.AndroidX.room}"
         }
 
         object Test {
-            private const val version = "1.3.0"
-            const val core = "androidx.test:core:$version"
-            const val rules = "androidx.test:rules:$version"
-            const val runner = "androidx.test:runner:$version"
+            const val core = "androidx.test:core:${Versions.AndroidX.test}"
+            const val rules = "androidx.test:rules:${Versions.AndroidX.test}"
+            const val runner = "androidx.test:runner:${Versions.AndroidX.test}"
 
             object Ext {
-                private const val version = "1.1.3"
-                const val junit = "androidx.test.ext:junit-ktx:$version"
+                const val junit = "androidx.test.ext:junit-ktx:${Versions.AndroidX.testExt}"
             }
         }
     }
 
-    object Dagger {
-        const val version = "2.40.5"
-        const val core = "com.google.dagger:dagger:$version"
-    }
+    const val dagger = "com.google.dagger:dagger:${Versions.AndroidX.dagger}"
 
     object Hilt {
-        const val androidGradlePlugin =
-            "com.google.dagger:hilt-android-gradle-plugin:${Dagger.version}"
-        const val android = "com.google.dagger:hilt-android:${Dagger.version}"
-        const val compiler = "com.google.dagger:hilt-compiler:${Dagger.version}"
+        const val agp = "com.google.dagger:hilt-android-gradle-plugin:${Versions.AndroidX.dagger}"
+        const val android = "com.google.dagger:hilt-android:${Versions.AndroidX.dagger}"
+        const val compiler = "com.google.dagger:hilt-compiler:${Versions.AndroidX.dagger}"
     }
 
     object Kotlin {
-        private const val version = "1.5.31"
-        const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$version"
-        const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
+        const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Versions.kotlin}"
+        const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
 
         object Coroutines {
-            private const val version = "1.5.2"
-            const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version"
-            const val test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$version"
+            const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
+            const val test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
         }
     }
 
     object Test {
-        const val junit = "junit:junit:4.13"
-
-        private const val assertjVersion = "3.21.0"
-        const val assertj = "org.assertj:assertj-core:$assertjVersion"
-
-        private const val robolectricVersion = "4.7.3"
-        const val robolectric = "org.robolectric:robolectric:$robolectricVersion"
+        const val junit = "junit:junit:${Versions.junit}"
+        const val assertj = "org.assertj:assertj-core:${Versions.assertJ}"
+        const val robolectric = "org.robolectric:robolectric:${Versions.robolectric}"
     }
-}
-
-object TestRunner {
-    const val androidJUnit = "androidx.test.runner.AndroidJUnitRunner"
 }

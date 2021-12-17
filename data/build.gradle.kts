@@ -28,11 +28,11 @@ android {
     kotlinOptions.allWarningsAsErrors = true
     testOptions.unitTests.isIncludeAndroidResources = true
 
-    compileSdk = Deps.Android.Sdk.Version.compileSdk
+    compileSdk = Versions.Android.Sdk.compile
     defaultConfig {
-        minSdk = Deps.Android.Sdk.Version.minSdk
-        targetSdk = Deps.Android.Sdk.Version.targetSdk
-        testInstrumentationRunner = TestRunner.androidJUnit
+        minSdk = Versions.Android.Sdk.min
+        targetSdk = Versions.Android.Sdk.target
+        testInstrumentationRunner = TestRunners.androidJUnit
     }
 
     sourceSets["main"].java.srcDirs("src/main/kotlin")

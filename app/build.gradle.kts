@@ -28,27 +28,19 @@ android {
         targetCompatibility(JavaVersion.VERSION_1_8)
     }
 
-    buildFeatures {
-        compose = true
-    }
+    buildFeatures.compose = true
+    kotlinOptions.allWarningsAsErrors = true
+    composeOptions.kotlinCompilerExtensionVersion = Versions.AndroidX.Compose.kotlinCompiler
 
-    composeOptions {
-        kotlinCompilerExtensionVersion = Deps.AndroidX.Compose.kotlinCompilerExtensionVersion
-    }
-
-    kotlinOptions {
-        allWarningsAsErrors = true
-    }
-
-    compileSdk = Deps.Android.Sdk.Version.compileSdk
+    compileSdk = Versions.Android.Sdk.compile
     defaultConfig {
         applicationId = "com.soberg.openbp"
         versionCode = 1
         versionName = "1.0"
 
-        minSdk = Deps.Android.Sdk.Version.minSdk
-        targetSdk = Deps.Android.Sdk.Version.targetSdk
-        testInstrumentationRunner = TestRunner.androidJUnit
+        minSdk = Versions.Android.Sdk.min
+        targetSdk = Versions.Android.Sdk.target
+        testInstrumentationRunner = TestRunners.androidJUnit
     }
 
     sourceSets {
