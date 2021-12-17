@@ -14,10 +14,9 @@ dependencies {
     kapt(Deps.Hilt.compiler)
     implementation(Deps.Hilt.android)
 
-    androidTestImplementation(Deps.Android.Test.assertj)
-    androidTestImplementation(Deps.AndroidX.Test.core)
-    androidTestImplementation(Deps.AndroidX.Test.rules)
-    androidTestImplementation(Deps.AndroidX.Test.Ext.junit)
+    testImplementation(Deps.Test.assertj)
+    testImplementation(Deps.Test.junit)
+    testImplementation(Deps.Test.robolectric)
 }
 
 android {
@@ -26,9 +25,8 @@ android {
         targetCompatibility(JavaVersion.VERSION_1_8)
     }
 
-    kotlinOptions {
-        allWarningsAsErrors = true
-    }
+    kotlinOptions.allWarningsAsErrors = true
+    testOptions.unitTests.isIncludeAndroidResources = true
 
     compileSdk = Deps.Android.Sdk.Version.compileSdk
     defaultConfig {
@@ -38,5 +36,5 @@ android {
     }
 
     sourceSets["main"].java.srcDirs("src/main/kotlin")
-    sourceSets["test"].java.srcDirs("src/androidTest/kotlin")
+    sourceSets["test"].java.srcDirs("src/unitTest/kotlin")
 }

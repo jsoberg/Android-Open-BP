@@ -89,6 +89,9 @@ object Deps {
 
         private const val assertjVersion = "3.21.0"
         const val assertj = "org.assertj:assertj-core:$assertjVersion"
+
+        private const val robolectricVersion = "4.7.3"
+        const val robolectric = "org.robolectric:robolectric:$robolectricVersion"
     }
 }
 
