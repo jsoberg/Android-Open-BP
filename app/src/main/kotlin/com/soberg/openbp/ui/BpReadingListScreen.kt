@@ -5,11 +5,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
 import androidx.compose.material.CircularProgressIndicator
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -56,33 +52,13 @@ private fun LoadingContent() {
 
 @Composable
 private fun BpReadingListContent(
-    readings: List<BpReading>
+    readings: List<BpReading>,
 ) {
     // TODO: Handle empty readings list.
     LazyColumn {
         items(readings) { reading ->
             BpReadingCard(reading)
         }
-    }
-}
-
-@Composable
-private fun BpReadingCard(
-    reading: BpReading
-) {
-    Card(
-        // TODO: Store dimensions centrally.
-        shape = RoundedCornerShape(4.dp),
-        elevation = 4.dp,
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(top = 4.dp)
-    ) {
-        Text(
-            modifier = Modifier.padding(start = 16.dp),
-            text = "${reading.systolic}/${reading.diastolic}",
-            style = MaterialTheme.typography.h4
-        )
     }
 }
 
