@@ -29,5 +29,6 @@ object Versions {
 
     const val assertJ = "3.21.0"
     const val junit = "4.13"
+    const val mockK = "1.12.1"
     const val robolectric = "4.7.3"
 }

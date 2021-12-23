@@ -69,8 +69,9 @@ object Deps {
     }
 
     object Test {
-        const val junit = "junit:junit:${Versions.junit}"
         const val assertj = "org.assertj:assertj-core:${Versions.assertJ}"
+        const val junit = "junit:junit:${Versions.junit}"
+        const val mockK = "io.mockk:mockk:${Versions.mockK}"
         const val robolectric = "org.robolectric:robolectric:${Versions.robolectric}"
     }
 }
