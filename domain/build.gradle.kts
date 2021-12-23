@@ -13,8 +13,9 @@ dependencies {
     api(Deps.Kotlin.stdlib)
     api(Deps.Kotlin.Coroutines.core)
 
-    testImplementation(Deps.Test.junit)
     testImplementation(Deps.Test.assertj)
+    testImplementation(Deps.Test.junit)
+    testImplementation(Deps.Test.mockK)
 }
 
 sourceSets {
