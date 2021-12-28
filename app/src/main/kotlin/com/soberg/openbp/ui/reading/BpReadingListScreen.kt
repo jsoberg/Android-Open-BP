@@ -13,7 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.soberg.openbp.domain.reading.BpReading
+import com.soberg.openbp.domain.classification.Classification.*
 import com.soberg.openbp.domain.reading.mmHg
 import com.soberg.openbp.ui.reading.BpReadingListViewModel.State.Complete
 import com.soberg.openbp.ui.reading.BpReadingListViewModel.State.Loading
@@ -52,7 +52,7 @@ private fun LoadingContent() {
 
 @Composable
 private fun BpReadingListContent(
-    readings: List<BpReading>,
+    readings: List<BpReadingViewItem>,
 ) {
     // TODO: Handle empty readings list.
     LazyColumn {
@@ -72,9 +72,11 @@ private fun BpReadingsListScreenPreview() {
         BpReadingListScreen(
             state = Complete(
                 listOf(
-                    BpReading(systolic = 120.mmHg, diastolic = 70.mmHg),
-                    BpReading(systolic = 115.mmHg, diastolic = 65.mmHg),
-                    BpReading(systolic = 110.mmHg, diastolic = 60.mmHg),
+                    BpReadingViewItem(1, 120.mmHg, 70.mmHg, NORMAL),
+                    BpReadingViewItem(1, 130.mmHg, 70.mmHg, ELEVATED),
+                    BpReadingViewItem(1, 130.mmHg, 80.mmHg, HYPERTENSION_STAGE_1),
+                    BpReadingViewItem(1, 140.mmHg, 90.mmHg, HYPERTENSION_STAGE_2),
+                    BpReadingViewItem(1, 190.mmHg, 120.mmHg, HYPERTENSIVE_CRISIS),
                 )
             )
         )

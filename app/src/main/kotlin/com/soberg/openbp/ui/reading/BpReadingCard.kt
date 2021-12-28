@@ -15,12 +15,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.soberg.openbp.R
-import com.soberg.openbp.domain.reading.BpReading
+import com.soberg.openbp.domain.classification.Classification
 import com.soberg.openbp.domain.reading.mmHg
 
 @Composable
 internal fun BpReadingCard(
-    reading: BpReading,
+    reading: BpReadingViewItem,
 ) {
     Card(
         // TODO: Store dimensions centrally.
@@ -41,7 +41,7 @@ internal fun BpReadingCard(
 
 @Composable
 private fun BpReadingCardContent(
-    reading: BpReading,
+    reading: BpReadingViewItem,
 ) {
     Row(
         modifier = Modifier
@@ -86,5 +86,7 @@ private val PressureAbbrTextStyle = TextStyle(
 )
 @Composable
 private fun BpReadingCardPreview() {
-    BpReadingCard(BpReading(systolic = 120.mmHg, diastolic = 70.mmHg))
+    BpReadingCard(
+        BpReadingViewItem(1, 120.mmHg, 70.mmHg, Classification.NORMAL)
+    )
 }

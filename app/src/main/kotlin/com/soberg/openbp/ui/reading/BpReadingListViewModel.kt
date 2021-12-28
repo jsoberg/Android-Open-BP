@@ -2,7 +2,7 @@ package com.soberg.openbp.ui.reading
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.soberg.openbp.domain.reading.BpReading
+import com.soberg.openbp.domain.classification.AhaClassifier
 import com.soberg.openbp.domain.reading.LoadBpReadingsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -16,6 +16,9 @@ class BpReadingListViewModel @Inject constructor(
     private val loadBpReadingsUseCase: LoadBpReadingsUseCase
 ) : ViewModel() {
 
+    // TODO: Load classifier and create this accordingly
+    private val viewItemMapper = BpReadingViewItemMapper(AhaClassifier())
+
     private val _state = MutableStateFlow<State>(State.Loading)
     val state = _state.asStateFlow()
 
@@ -24,7 +27,8 @@ class BpReadingListViewModel @Inject constructor(
             // TODO: Handle errors
             loadBpReadingsUseCase.loadBpReadings()
                 .collect { readings ->
-                    _state.value = State.Complete(readings)
+                    val viewItems = viewItemMapper.map(readings)
+                    _state.value = State.Complete(viewItems)
                 }
         }
     }
@@ -35,7 +39,7 @@ class BpReadingListViewModel @Inject constructor(
         object Error : State
 
         data class Complete(
-            val readings: List<BpReading>
+            val readings: List<BpReadingViewItem>
         ) : State
     }
 }
