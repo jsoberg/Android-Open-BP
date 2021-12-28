@@ -1,4 +1,4 @@
-package com.soberg.openbp.ui
+package com.soberg.openbp.ui.reading
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,8 +15,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.soberg.openbp.domain.reading.BpReading
 import com.soberg.openbp.domain.reading.mmHg
-import com.soberg.openbp.ui.BpReadingListViewModel.State.Complete
-import com.soberg.openbp.ui.BpReadingListViewModel.State.Loading
+import com.soberg.openbp.ui.reading.BpReadingListViewModel.State.Complete
+import com.soberg.openbp.ui.reading.BpReadingListViewModel.State.Loading
 import com.soberg.openbp.ui.theme.OpenBpTheme
 
 @Composable

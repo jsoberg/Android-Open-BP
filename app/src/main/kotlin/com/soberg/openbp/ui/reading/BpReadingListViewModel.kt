@@ -1,4 +1,4 @@
-package com.soberg.openbp.ui
+package com.soberg.openbp.ui.reading
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

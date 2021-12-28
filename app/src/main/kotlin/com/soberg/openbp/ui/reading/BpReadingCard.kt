@@ -1,4 +1,4 @@
-package com.soberg.openbp.ui
+package com.soberg.openbp.ui.reading
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
