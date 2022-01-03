@@ -5,7 +5,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -31,11 +33,35 @@ fun BpReadingListScreen(
 internal fun BpReadingListScreen(
     state: BpReadingListViewModel.State,
 ) {
-    when (state) {
-        is Loading -> LoadingContent()
-        is Complete -> BpReadingListContent(readings = state.readings)
-        // TODO Handle errors.
+    Scaffold(
+        floatingActionButton = {
+            if (state is Complete) {
+                Fab {
+                    // TODO Implement click
+                }
+            }
+        }
+    ) {
+        when (state) {
+            is Loading -> LoadingContent()
+            is Complete -> BpReadingListContent(readings = state.readings)
+            // TODO Handle errors.
+        }
     }
+}
+
+@Composable
+private fun Fab(onClick: () -> Unit) {
+    FloatingActionButton(
+        backgroundColor = MaterialTheme.colors.primary,
+        onClick = onClick,
+        content = {
+            Icon(
+                imageVector = Icons.Filled.Add,
+                contentDescription = null
+            )
+        }
+    )
 }
 
 @Composable
