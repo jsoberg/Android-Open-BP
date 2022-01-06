@@ -20,6 +20,11 @@ dependencies {
 
     kapt(Deps.Hilt.compiler)
     implementation(Deps.Hilt.android)
+
+    testImplementation(Deps.AndroidX.Compose.Test.junit)
+    testImplementation(Deps.Test.junit)
+    testImplementation(Deps.Test.robolectric)
+    debugImplementation(Deps.AndroidX.Compose.Test.manifest)
 }
 
 android {
@@ -45,6 +50,7 @@ android {
 
     sourceSets {
         sourceSets["main"].java.srcDirs("src/main/kotlin")
+        sourceSets["test"].java.srcDirs("src/unitTest/kotlin")
     }
 
     buildTypes {
@@ -55,5 +61,9 @@ android {
                 "proguard-rules.pro"
             )
         }
+    }
+
+    testOptions {
+        unitTests.isIncludeAndroidResources = true
     }
 }

@@ -22,6 +22,13 @@ object Deps {
                 "androidx.compose.runtime:runtime:${Versions.AndroidX.Compose.version}"
             const val tooling =
                 "androidx.compose.ui:ui-tooling:${Versions.AndroidX.Compose.version}"
+
+            object Test {
+                const val manifest =
+                    "androidx.compose.ui:ui-test-manifest:${Versions.AndroidX.Compose.version}"
+                const val junit =
+                    "androidx.compose.ui:ui-test-junit4:${Versions.AndroidX.Compose.version}"
+            }
         }
 
         object Lifecycle {
