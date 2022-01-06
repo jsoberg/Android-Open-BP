@@ -26,6 +26,7 @@ object Versions {
 
     const val coroutines = "1.5.2"
     const val kotlin = "1.5.31"
+    const val kover = "0.5.0-RC"
 
     const val assertJ = "3.21.0"
     const val junit = "4.13"

@@ -31,3 +31,8 @@ sourceSets {
         }
     }
 }
+
+tasks.koverHtmlProjectReport {
+    isEnabled = true
+    htmlReportDir.set(layout.buildDirectory.dir("kover/html"))
+}

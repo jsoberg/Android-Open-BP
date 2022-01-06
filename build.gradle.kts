@@ -1,3 +1,7 @@
+plugins {
+    id("org.jetbrains.kotlinx.kover") version Versions.kover
+}
+
 buildscript {
     repositories {
         google()
@@ -22,4 +26,9 @@ allprojects {
 
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
+}
+
+tasks.koverHtmlReport {
+    isEnabled = true
+    htmlReportDir.set(layout.buildDirectory.dir("kover/html"))
 }

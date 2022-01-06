@@ -73,6 +73,10 @@ object Deps {
             const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
             const val test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
         }
+
+        object Kover {
+            const val gradlePlugin = "org.jetbrains.kotlinx:kover:${Versions.kover}"
+        }
     }
 
     object Test {
