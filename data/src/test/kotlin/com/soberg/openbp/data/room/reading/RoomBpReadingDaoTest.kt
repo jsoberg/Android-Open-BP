@@ -33,7 +33,7 @@ class RoomBpReadingDaoTest {
     }
 
     @Test
-    fun loadByIdReturnsExpectedBpReading() {
+    fun `returns inserted reading for loadById`() {
         runBlocking {
             val firstReading = createNewReading()
             val id = dao.upsert(firstReading)
