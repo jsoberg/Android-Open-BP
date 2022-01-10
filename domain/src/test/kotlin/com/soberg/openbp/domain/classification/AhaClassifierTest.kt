@@ -6,7 +6,7 @@ import com.soberg.openbp.domain.reading.mmHg
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 
-class AhaClassifierShould {
+class AhaClassifierTest {
 
     private val classification = AhaClassifier()
 

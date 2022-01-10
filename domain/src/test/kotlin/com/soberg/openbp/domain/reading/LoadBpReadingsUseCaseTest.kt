@@ -4,7 +4,7 @@ import io.mockk.mockk
 import io.mockk.verify
 import org.junit.Test
 
-class LoadBpReadingsUseCaseShould {
+class LoadBpReadingsUseCaseTest {
 
     private val repository: BpReadingRepository = mockk(relaxed = true)
     private val useCase = LoadBpReadingsUseCase(

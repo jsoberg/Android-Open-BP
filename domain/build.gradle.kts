@@ -20,14 +20,10 @@ dependencies {
 
 sourceSets {
     main {
-        java {
-            srcDir("src/main/kotlin")
-        }
+        java.srcDir("src/main/kotlin")
     }
 
     test {
-        java {
-            srcDir("src/unitTest/kotlin")
-        }
+        java.srcDir("src/test/kotlin")
     }
 }

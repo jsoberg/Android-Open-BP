@@ -36,5 +36,5 @@ android {
     }
 
     sourceSets["main"].java.srcDirs("src/main/kotlin")
-    sourceSets["test"].java.srcDirs("src/unitTest/kotlin")
+    sourceSets["test"].java.srcDirs("src/test/kotlin")
 }
