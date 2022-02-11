@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.soberg.openbp.data.room.reading.RoomBpReading.Companion.TABLE_NAME
+import com.soberg.openbp.domain.Time
 import com.soberg.openbp.domain.reading.BpReading
 import com.soberg.openbp.domain.reading.bpm
 import com.soberg.openbp.domain.reading.mmHg
@@ -13,7 +14,7 @@ internal data class RoomBpReading(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
     @ColumnInfo(name = SYSTOLIC) val systolic: Short,
     @ColumnInfo(name = DIASTOLIC) val diastolic: Short,
-    @ColumnInfo(name = RECORDED_TIME) val recordedTime: Long,
+    @ColumnInfo(name = RECORDED_TIME) val recordedTimeMs: Long,
     @ColumnInfo(name = PULSE) val pulse: Short?
 ) {
     companion object {
@@ -30,7 +31,7 @@ internal data class RoomBpReading(
         id = id,
         systolic = systolic.mmHg,
         diastolic = diastolic.mmHg,
-        recordedTime = recordedTime,
+        recordedTime = Time.fromMs(recordedTimeMs),
         pulse = pulse?.bpm,
     )
 }
@@ -39,6 +40,6 @@ internal fun BpReading.toRoomModel() = RoomBpReading(
     id = id ?: 0L,
     systolic = systolic.mmHg,
     diastolic = diastolic.mmHg,
-    recordedTime = recordedTime,
+    recordedTimeMs = recordedTime.ms,
     pulse = pulse?.bpm,
 )

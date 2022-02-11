@@ -1,5 +1,7 @@
 package com.soberg.openbp.domain.reading
 
+import com.soberg.openbp.domain.Time
+
 /** Blood pressure reading data.
  *
  * Visit [mayoclinic.org](https://www.mayoclinic.org/diseases-conditions/high-blood-pressure/expert-answers/pulse-pressure/faq-20058189)
@@ -11,8 +13,8 @@ data class BpReading(
     val systolic: Pressure,
     /** The bottom/second number in a blood pressure reading, indicating the amount of pressure in your arteries between beats. */
     val diastolic: Pressure,
-    /** The time when this reading was recorded, in milliseconds since the Unix epoch. */
-    val recordedTime: Long = System.currentTimeMillis(),
+    /** The date and time that this reading was recorded. */
+    val recordedTime: Time = Time.now,
 
     /** Optional pulse rate corresponding to this blood pressure reading. */
     val pulse: Pulse? = null
@@ -33,7 +35,6 @@ value class Pressure(val mmHg: Short) {
     override fun toString(): String = mmHg.toString()
 
     operator fun compareTo(other: Pressure) = (mmHg - other.mmHg)
-
 }
 
 inline val Short.mmHg: Pressure get() = Pressure(mmHg = this)

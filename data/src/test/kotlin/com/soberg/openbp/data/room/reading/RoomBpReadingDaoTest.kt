@@ -46,7 +46,7 @@ class RoomBpReadingDaoTest {
     private fun createNewReading() = RoomBpReading(
         systolic = randomShort(),
         diastolic = randomShort(),
-        recordedTime = Random.nextLong(),
+        recordedTimeMs = Random.nextLong(),
         pulse = randomShort()
     )
 
