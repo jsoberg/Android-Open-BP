@@ -6,8 +6,8 @@ import androidx.room.PrimaryKey
 import com.soberg.openbp.data.room.reading.RoomBpReading.Companion.TABLE_NAME
 import com.soberg.openbp.domain.Time
 import com.soberg.openbp.domain.reading.BpReading
-import com.soberg.openbp.domain.reading.bpm
-import com.soberg.openbp.domain.reading.mmHg
+import com.soberg.openbp.domain.reading.Pressure.Companion.mmHg
+import com.soberg.openbp.domain.reading.Pulse.Companion.bpm
 
 @Entity(tableName = TABLE_NAME)
 internal data class RoomBpReading(

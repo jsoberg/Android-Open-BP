@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.soberg.openbp.R
 import com.soberg.openbp.domain.classification.Classification
-import com.soberg.openbp.domain.reading.mmHg
+import com.soberg.openbp.domain.reading.Pressure.Companion.mmHg
 import com.soberg.openbp.ui.theme.*
 
 @Composable
