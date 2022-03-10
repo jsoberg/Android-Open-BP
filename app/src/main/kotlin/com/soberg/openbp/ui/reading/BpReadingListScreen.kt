@@ -17,8 +17,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.soberg.openbp.domain.classification.Classification.*
 import com.soberg.openbp.domain.reading.Pressure.Companion.mmHg
-import com.soberg.openbp.ui.reading.BpReadingListViewModel.State.Complete
-import com.soberg.openbp.ui.reading.BpReadingListViewModel.State.Loading
+import com.soberg.openbp.ui.reading.BpReadingListViewModel.State.*
 import com.soberg.openbp.ui.theme.OpenBpTheme
 
 @Composable
@@ -45,7 +44,7 @@ internal fun BpReadingListScreen(
         when (state) {
             is Loading -> LoadingContent()
             is Complete -> BpReadingListContent(readings = state.readings)
-            // TODO Handle errors.
+            is Error -> TODO("Handle errors")
         }
     }
 }

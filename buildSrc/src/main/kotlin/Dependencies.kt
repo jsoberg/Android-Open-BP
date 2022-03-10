@@ -45,7 +45,7 @@ object Deps {
             const val runner = "androidx.test:runner:${Versions.AndroidX.test}"
 
             object Ext {
-                const val junit = "androidx.test.ext:junit-ktx:${Versions.AndroidX.testExt}"
+                const val junit = "androidx.test.ext:junit-ktx:${Versions.AndroidX.testJunitExt}"
             }
         }
     }
