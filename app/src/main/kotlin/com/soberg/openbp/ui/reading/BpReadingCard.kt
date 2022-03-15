@@ -1,5 +1,7 @@
 package com.soberg.openbp.ui.reading
 
+import android.content.res.Configuration.UI_MODE_NIGHT_NO
+import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -101,11 +103,11 @@ private val PressureAbbrTextStyle = TextStyle(
     fontSize = 14.sp
 )
 
-@Preview(
-    showBackground = true
-)
+@Preview(name = "Light Mode", uiMode = UI_MODE_NIGHT_NO)
+@Preview(name = "Dark Mode", uiMode = UI_MODE_NIGHT_YES)
+@Preview(name = "Large Font", fontScale = 1.5f)
 @Composable
-private fun BpReadingCardPreview() {
+private fun BpReadingCardPreview() = OpenBpTheme {
     BpReadingCard(
         BpReadingViewItem(1, 120.mmHg, 70.mmHg, Classification.NORMAL)
     )

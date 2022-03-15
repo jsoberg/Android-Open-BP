@@ -1,5 +1,7 @@
 package com.soberg.openbp.ui.reading
 
+import android.content.res.Configuration.UI_MODE_NIGHT_NO
+import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -87,23 +89,20 @@ private fun BpReadingListContent(
     }
 }
 
-@Preview(
-    showSystemUi = true,
-    showBackground = true
-)
+@Preview(name = "Light Mode", uiMode = UI_MODE_NIGHT_NO)
+@Preview(name = "Dark Mode", uiMode = UI_MODE_NIGHT_YES)
+@Preview(name = "Large Font", fontScale = 1.5f)
 @Composable
-private fun BpReadingsListScreenPreview() {
-    OpenBpTheme {
-        BpReadingListScreen(
-            state = Complete(
-                listOf(
-                    BpReadingViewItem(1, 120.mmHg, 70.mmHg, NORMAL),
-                    BpReadingViewItem(1, 130.mmHg, 70.mmHg, ELEVATED),
-                    BpReadingViewItem(1, 130.mmHg, 80.mmHg, HYPERTENSION_STAGE_1),
-                    BpReadingViewItem(1, 140.mmHg, 90.mmHg, HYPERTENSION_STAGE_2),
-                    BpReadingViewItem(1, 190.mmHg, 120.mmHg, HYPERTENSIVE_CRISIS),
-                )
+private fun BpReadingsListScreenPreview() = OpenBpTheme {
+    BpReadingListScreen(
+        state = Complete(
+            listOf(
+                BpReadingViewItem(1, 120.mmHg, 70.mmHg, NORMAL),
+                BpReadingViewItem(1, 130.mmHg, 70.mmHg, ELEVATED),
+                BpReadingViewItem(1, 130.mmHg, 80.mmHg, HYPERTENSION_STAGE_1),
+                BpReadingViewItem(1, 140.mmHg, 90.mmHg, HYPERTENSION_STAGE_2),
+                BpReadingViewItem(1, 190.mmHg, 120.mmHg, HYPERTENSIVE_CRISIS),
             )
         )
-    }
+    )
 }
