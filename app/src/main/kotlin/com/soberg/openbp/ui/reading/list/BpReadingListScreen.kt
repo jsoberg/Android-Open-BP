@@ -1,4 +1,4 @@
-package com.soberg.openbp.ui.reading
+package com.soberg.openbp.ui.reading.list
 
 import android.content.res.Configuration.UI_MODE_NIGHT_NO
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
@@ -19,7 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.soberg.openbp.domain.classification.Classification.*
 import com.soberg.openbp.domain.reading.Pressure.Companion.mmHg
-import com.soberg.openbp.ui.reading.BpReadingListViewModel.State.*
+import com.soberg.openbp.ui.reading.list.BpReadingListViewModel.State.*
 import com.soberg.openbp.ui.theme.OpenBpTheme
 
 @Composable

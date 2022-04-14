@@ -1,4 +1,4 @@
-package com.soberg.openbp.ui.reading
+package com.soberg.openbp.ui.reading.list
 
 import com.soberg.openbp.domain.classification.Classification
 import com.soberg.openbp.domain.reading.Pressure
