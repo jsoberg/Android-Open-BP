@@ -4,9 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.soberg.openbp.ui.reading.list.BpReadingListScreen
-import com.soberg.openbp.ui.reading.list.BpReadingListViewModel
+import androidx.navigation.compose.rememberNavController
+import com.soberg.openbp.ui.navigation.OpenBpNavHost
 import com.soberg.openbp.ui.theme.OpenBpTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -24,6 +23,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 private fun OpenBpApp() {
-    val viewModel: BpReadingListViewModel = viewModel()
-    BpReadingListScreen(viewModel)
+    OpenBpNavHost(
+        navController = rememberNavController()
+    )
 }
