@@ -13,11 +13,13 @@ object Versions {
     object AndroidX {
         object Compose {
             const val activity = "1.4.0"
+            const val navigation = "2.4.2"
             const val version = "1.1.1"
         }
 
         const val dagger = "2.40.5"
         const val lifecycle = "2.4.1"
+        const val hiltNavigation = "1.0.0"
         const val room = "2.4.2"
         const val test = "1.4.0"
         const val testJunitExt = "1.1.3"

@@ -12,7 +12,9 @@ dependencies {
 
     implementation(Deps.AndroidX.Compose.activity)
     implementation(Deps.AndroidX.Compose.foundation)
+    implementation(Deps.AndroidX.Hilt.navigationCompose)
     implementation(Deps.AndroidX.Compose.material)
+    implementation(Deps.AndroidX.Compose.navigation)
     implementation(Deps.AndroidX.Compose.runtime)
     implementation(Deps.AndroidX.Compose.tooling)
     implementation(Deps.AndroidX.Lifecycle.composeViewModelUtilities)

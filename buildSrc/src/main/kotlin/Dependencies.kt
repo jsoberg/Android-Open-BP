@@ -18,10 +18,17 @@ object Deps {
                 "androidx.compose.foundation:foundation:${Versions.AndroidX.Compose.version}"
             const val material =
                 "androidx.compose.material:material:${Versions.AndroidX.Compose.version}"
+            const val navigation =
+                "androidx.navigation:navigation-compose:${Versions.AndroidX.Compose.navigation}"
             const val runtime =
                 "androidx.compose.runtime:runtime:${Versions.AndroidX.Compose.version}"
             const val tooling =
                 "androidx.compose.ui:ui-tooling:${Versions.AndroidX.Compose.version}"
+        }
+
+        object Hilt {
+            const val navigationCompose =
+                "androidx.hilt:hilt-navigation-compose:${Versions.AndroidX.hiltNavigation}"
         }
 
         object Lifecycle {
