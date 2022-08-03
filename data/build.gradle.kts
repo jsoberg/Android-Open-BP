@@ -5,18 +5,18 @@ plugins {
 }
 
 dependencies {
-    api(project(":domain"))
+    api(projects.domain)
 
-    kapt(Deps.AndroidX.Room.compiler)
-    api(Deps.AndroidX.Room.runtime)
-    api(Deps.AndroidX.Room.kotlinExtensions)
+    kapt(libs.room.compiler)
+    api(libs.room.runtime)
+    api(libs.room.kotlinExtensions)
 
-    kapt(Deps.Hilt.compiler)
-    implementation(Deps.Hilt.android)
+    kapt(libs.hilt.compiler)
+    implementation(libs.hilt.android)
 
-    testImplementation(Deps.Test.assertj)
-    testImplementation(Deps.Test.junit)
-    testImplementation(Deps.Test.robolectric)
+    testImplementation(libs.test.assertj)
+    testImplementation(libs.test.junit)
+    testImplementation(libs.test.robolectric)
 }
 
 android {

@@ -9,13 +9,13 @@ java {
 }
 
 dependencies {
-    api(Deps.dagger)
-    api(Deps.Kotlin.stdlib)
-    api(Deps.Kotlin.Coroutines.core)
+    api(libs.dagger)
+    api(libs.kotlin.stdlib)
+    api(libs.kotlin.coroutines)
 
-    testImplementation(Deps.Test.assertj)
-    testImplementation(Deps.Test.junit)
-    testImplementation(Deps.Test.mockK)
+    testImplementation(libs.test.assertj)
+    testImplementation(libs.test.junit)
+    testImplementation(libs.test.mockk)
 }
 
 sourceSets {

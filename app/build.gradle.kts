@@ -6,22 +6,22 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":data"))
+    implementation(projects.data)
 
-    implementation(Deps.Kotlin.stdlib)
+    implementation(libs.kotlin.stdlib)
 
-    implementation(Deps.AndroidX.Compose.activity)
-    implementation(Deps.AndroidX.Compose.foundation)
-    implementation(Deps.AndroidX.Hilt.navigationCompose)
-    implementation(Deps.AndroidX.Compose.material)
-    implementation(Deps.AndroidX.Compose.navigation)
-    implementation(Deps.AndroidX.Compose.runtime)
-    implementation(Deps.AndroidX.Compose.tooling)
-    implementation(Deps.AndroidX.Lifecycle.composeViewModelUtilities)
-    implementation(Deps.AndroidX.Lifecycle.viewModel)
+    implementation(libs.compose.activity)
+    implementation(libs.compose.foundation)
+    implementation(libs.hilt.navigationCompose)
+    implementation(libs.compose.material)
+    implementation(libs.compose.navigation)
+    implementation(libs.compose.runtime)
+    implementation(libs.compose.tooling)
+    implementation(libs.androidX.lifecycle.composeViewModelUtilities)
+    implementation(libs.androidX.lifecycle.viewModel)
 
-    kapt(Deps.Hilt.compiler)
-    implementation(Deps.Hilt.android)
+    kapt(libs.hilt.compiler)
+    implementation(libs.hilt.android)
 }
 
 android {
@@ -32,7 +32,7 @@ android {
 
     buildFeatures.compose = true
     kotlinOptions.allWarningsAsErrors = true
-    composeOptions.kotlinCompilerExtensionVersion = Versions.AndroidX.Compose.version
+    composeOptions.kotlinCompilerExtensionVersion = libs.versions.compose.get()
 
     compileSdk = Versions.Android.Sdk.compile
     defaultConfig {
