@@ -42,11 +42,16 @@ internal fun BpReadingListScreen(
                 }
             }
         }
-    ) {
-        when (state) {
-            is Loading -> LoadingContent()
-            is Complete -> BpReadingListContent(readings = state.readings)
-            is Error -> TODO("Handle errors")
+    ) { padding ->
+        Box(
+            modifier = Modifier
+                .padding(padding)
+        ) {
+            when (state) {
+                is Loading -> LoadingContent()
+                is Complete -> BpReadingListContent(readings = state.readings)
+                is Error -> TODO("Handle errors")
+            }
         }
     }
 }
