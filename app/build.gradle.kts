@@ -32,7 +32,7 @@ android {
 
     buildFeatures.compose = true
     kotlinOptions.allWarningsAsErrors = true
-    composeOptions.kotlinCompilerExtensionVersion = libs.versions.compose.get()
+    composeOptions.kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
 
     compileSdk = Versions.Android.Sdk.compile
     defaultConfig {
